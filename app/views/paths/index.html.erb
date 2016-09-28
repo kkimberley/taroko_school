@@ -1,0 +1,19 @@
+<h1>Paths#index <%= link_to 'Add Path', new_path_path, class: 'btn btn-primary' %></h1>
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>List</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @paths.each do |path| %>
+      <tr>
+        <td>
+          <%= link_to path.title, path_path(path.url) %>
+          <%= link_to 'Modify', edit_path_path(path.url), class: 'btn btn-outline-warning btn-sm' %>
+          <%= link_to 'Delete', path_path(path), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-secondary btn-sm' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
