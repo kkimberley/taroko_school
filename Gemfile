@@ -32,6 +32,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Beauty with Bootstrap
 gem 'bootstrap', '~> 4.0.0.alpha4'
+# Use Devise for User authentication
+gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
