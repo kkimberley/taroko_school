@@ -1,4 +1,4 @@
-<h1>Paths#index</h1>
+<h1>Paths#index <%= link_to 'Add Path', new_path_path, class: 'btn btn-primary' %></h1>
 <table class="table">
   <thead class="thead-inverse">
     <tr>
@@ -9,7 +9,7 @@
     <% @paths.each do |path| %>
       <tr>
         <td>
-          <%= link_to path.title, path.url, target: '_blank' %>
+          <%= link_to path.title, url_with_protocol(path.url), target: '_blank' %>
         </td>
       </tr>
     <% end %>
