@@ -1,0 +1,17 @@
+<h1>Paths#index</h1>
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>List</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @paths.each do |path| %>
+      <tr>
+        <td>
+          <%= link_to path.title, path.url, target: '_blank' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
