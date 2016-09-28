@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Beauty with Bootstrap
+gem 'bootstrap', '~> 4.0.0.alpha4'
 # Use Devise for User authentication
 gem 'devise'
 
