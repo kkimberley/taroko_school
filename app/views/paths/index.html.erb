@@ -10,6 +10,7 @@
       <tr>
         <td>
           <%= link_to path.title, url_with_protocol(path.url), target: '_blank' %>
+          <%= link_to 'Modify', edit_path_path(path), class: 'btn btn-outline-warning btn-sm' %>
         </td>
       </tr>
     <% end %>

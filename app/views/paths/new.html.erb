@@ -1,16 +1,2 @@
 <h1>Paths#new</h1>
-<%= form_for :path, url: paths_path do |f| %>
-  <p>
-    <%= f.label :Title %><br>
-    <%= f.text_field :title %>
-  </p>
-
-  <p>
-    <%= f.label :URL %><br>
-    <%= f.text_field :url %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<%= render 'form' %>
