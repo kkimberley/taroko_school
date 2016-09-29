@@ -11,6 +11,7 @@
         <td>
           <%= link_to path.title, url_with_protocol(path.url), target: '_blank' %>
           <%= link_to 'Modify', edit_path_path(path), class: 'btn btn-outline-warning btn-sm' %>
+          <%= link_to 'Delete', path_path(path), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-secondary btn-sm' %>
         </td>
       </tr>
     <% end %>

@@ -28,6 +28,13 @@ class PathsController < ApplicationController
     end
   end
 
+  def destroy
+    @path = Path.find(params[:id])
+    @path.destroy
+
+    redirect_to paths_path
+  end
+
   private
 
   def path_params
