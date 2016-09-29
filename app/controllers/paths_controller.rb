@@ -1,4 +1,6 @@
 class PathsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @paths = Path.all
   end
