@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Create a default path
+  Path.create(title: 'HTML/CSS', description: 'Learn the fundamentals of design, front-end development, and crafting user experiences that are easy on the eyes.')
+
