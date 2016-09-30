@@ -5,6 +5,10 @@ class PathsController < ApplicationController
     @paths = Path.all
   end
 
+  def show
+    @path = Path.find(params[:id])
+  end
+
   def new
     @path = Path.new
   end
@@ -40,6 +44,6 @@ class PathsController < ApplicationController
   private
 
   def path_params
-    params.require(:path).permit(:title, :url)
+    params.require(:path).permit(:title, :description)
   end
 end

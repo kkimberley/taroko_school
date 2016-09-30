@@ -7,4 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Create a default path
-  Path.create(title: 'Ruby on Rails Guides', url: 'http://guides.rubyonrails.org/')
+  Path.create(title: 'HTML/CSS', description: 'Learn the fundamentals of design, front-end development, and crafting user experiences that are easy on the eyes.')
+
