@@ -1,7 +1,7 @@
 class Path < ApplicationRecord
-  before_create :generate_url
+  has_many :courses
 
-  def generate_url
-    self.url = self.title.gsub('/','-').downcase
+  def to_param
+    title
   end
 end

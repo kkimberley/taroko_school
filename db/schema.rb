@@ -10,14 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160930073043) do
+ActiveRecord::Schema.define(version: 20160930084209) do
+
+  create_table "courses", force: :cascade do |t|
+    t.string   "title"
+    t.string   "url"
+    t.text     "description"
+    t.integer  "path_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["path_id"], name: "index_courses_on_path_id"
+  end
 
   create_table "paths", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "url"
   end
 
   create_table "users", force: :cascade do |t|
