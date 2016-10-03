@@ -1,12 +1,13 @@
 class PathsController < ApplicationController
   before_action :authenticate_user!
 
+  before_action :find_path
+
   def index
     @paths = Path.all
   end
 
   def show
-    @path = Path.find_by_url(params[:id])
   end
 
   def new
@@ -14,7 +15,6 @@ class PathsController < ApplicationController
   end
 
   def edit
-    @path = Path.find_by_url(params[:id])
   end
 
   def create
@@ -25,8 +25,6 @@ class PathsController < ApplicationController
   end
 
   def update
-    @path = Path.find(params[:id])
-
     if @path.update(path_params)
       redirect_to action: :index
     else
@@ -35,7 +33,6 @@ class PathsController < ApplicationController
   end
 
   def destroy
-    @path = Path.find(params[:id])
     @path.destroy
 
     redirect_to paths_path
@@ -45,5 +42,13 @@ class PathsController < ApplicationController
 
   def path_params
     params.require(:path).permit(:title, :description)
+  end
+
+  def find_path
+    begin
+      @path = Path.find_by_title(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      redirect_to action: :index
+    end
   end
 end
