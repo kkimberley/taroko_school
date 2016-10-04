@@ -38,10 +38,10 @@ class CoursesController < ApplicationController
   end
 
   def find_course
-    @path = Path.find_by_title(params[:path_id])
+    @path = Path.find_by(title: params[:path_id])
 
     begin
-      @course = Course.find_by_title(params[:id])
+      @course = Course.find_by(title: params[:id])
     rescue ActiveRecord::RecordNotFound
       redirect_to action: :index
     end

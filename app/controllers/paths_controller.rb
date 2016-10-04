@@ -47,7 +47,7 @@ class PathsController < ApplicationController
 
   def find_path
     begin
-      @path = Path.find_by_title(params[:id])
+      @path = Path.find_by(title: params[:id])
     rescue ActiveRecord::RecordNotFound
       redirect_to action: :index
     end
