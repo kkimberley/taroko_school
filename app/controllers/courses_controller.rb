@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :find_course
+  before_action :find_course, except: [:new, :create]
 
   def show
   end
@@ -39,11 +39,10 @@ class CoursesController < ApplicationController
 
   def find_course
     @path = Path.find_by(title: params[:path_id])
+    @course = Course.find_by(title: params[:id])
 
-    begin
-      @course = Course.find_by(title: params[:id])
-    rescue ActiveRecord::RecordNotFound
-      redirect_to action: :index
+    if @course.nil?
+      redirect_to path_path(@path)
     end
   end
 end

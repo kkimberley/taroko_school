@@ -1,7 +1,7 @@
 class PathsController < ApplicationController
   before_action :authenticate_user!
 
-  before_action :find_path
+  before_action :find_path, except: [:index, :new, :create]
 
   def index
     @paths = Path.all
@@ -46,9 +46,9 @@ class PathsController < ApplicationController
   end
 
   def find_path
-    begin
-      @path = Path.find_by(title: params[:id])
-    rescue ActiveRecord::RecordNotFound
+    @path = Path.find_by(title: params[:id])
+
+    if @path.nil?
       redirect_to action: :index
     end
   end
