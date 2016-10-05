@@ -48,8 +48,6 @@ class PathsController < ApplicationController
   def find_path
     @path = Path.find_by(title: params[:id])
 
-    if @path.nil?
-      redirect_to action: :index
-    end
+    redirect_to action: :index unless @path
   end
 end

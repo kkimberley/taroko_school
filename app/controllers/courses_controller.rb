@@ -41,8 +41,6 @@ class CoursesController < ApplicationController
     @path = Path.find_by(title: params[:path_id])
     @course = Course.find_by(title: params[:id])
 
-    if @course.nil?
-      redirect_to path_path(@path)
-    end
+    redirect_to path_path(@path) unless @course
   end
 end
