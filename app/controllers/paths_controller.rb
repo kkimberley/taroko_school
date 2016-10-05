@@ -1,13 +1,14 @@
 class PathsController < ApplicationController
   before_action :authenticate_user!
 
-  before_action :find_path
+  before_action :find_path, except: [:index, :new, :create]
 
   def index
     @paths = Path.all
   end
 
   def show
+    @courses = @path.courses
   end
 
   def new
@@ -45,10 +46,8 @@ class PathsController < ApplicationController
   end
 
   def find_path
-    begin
-      @path = Path.find_by_title(params[:id])
-    rescue ActiveRecord::RecordNotFound
-      redirect_to action: :index
-    end
+    @path = Path.find_by(title: params[:id])
+
+    redirect_to action: :index unless @path
   end
 end
