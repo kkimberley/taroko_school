@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root 'paths#index'
   resources :paths do
-    resources :courses
+    resources :courses do
+      resources :missions
+    end
   end
 
   devise_for :users
