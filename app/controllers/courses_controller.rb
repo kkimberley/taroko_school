@@ -5,6 +5,7 @@ class CoursesController < ApplicationController
   end
 
   def new
+    @path = Path.find_by(title: params[:path_id])
     @course = @path.courses.build
   end
 
@@ -12,6 +13,7 @@ class CoursesController < ApplicationController
   end
 
   def create
+    @path = Path.find_by(title: params[:path_id])
     @course = @path.courses.create(course_params)
 
     redirect_to path_path(@path)
