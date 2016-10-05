@@ -1,17 +1,16 @@
-<p>
-  <h1><%= @course.title %></h1>
-</p>
-
-<p>
-  <strong><%= @course.description %></strong>
-</p>
-
-<h2>Courses list <%= link_to 'Add Mission', new_path_course_mission_path(@path, @course), class: 'btn btn-primary' %></h2>
+<div class="jumbotron">
+  <h1 class="display-3"><%= @course.title %></h1>
+  <p class="lead"><strong><%= @course.description %></strong></p>
+  <hr class="m-y-2">
+  <p class="lead">
+    <%= link_to 'Add Mission', new_path_course_mission_path(@path, @course), class: 'btn btn-primary' %>
+  </p>
+</div>
 
 <table class="table">
   <thead class="thead-inverse">
     <tr>
-      <th>List</th>
+      <th>Missions List</th>
     </tr>
   </thead>
   <tbody>
