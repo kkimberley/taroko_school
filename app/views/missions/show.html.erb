@@ -7,7 +7,7 @@
   </p>
   <%= link_to @mission.url, url_with_protocol(@mission.url), target: '_blank', class: 'list-group-item list-group-item-action' %>
   <p class="list-group-item list-group-item-action">
-    <%= @mission.finish? %>
+    <%= @mission.if_finish ? "Finished" : "Not Finished" %>
   </p>
   <p class="list-group-item list-group-item-action">
     <%= link_to 'Back', path_course_path(@path, @course), class: 'btn btn-info btn-lg' %>

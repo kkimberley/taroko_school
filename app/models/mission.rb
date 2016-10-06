@@ -6,8 +6,4 @@ class Mission < ApplicationRecord
   def to_param
     title
   end
-
-  def finish?
-    result = self.if_finish ? "Finished" : "Not Finished"
-  end
 end
