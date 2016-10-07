@@ -1,4 +1,4 @@
-<%= form_for([@path, @course]) do |f| %>
+<%= form_for([@path, @course, @mission]) do |f| %>
   <div class="form-group">
     <%= f.label :title %><br>
     <%= f.text_field :title, class: 'form-control' %>
@@ -6,6 +6,14 @@
   <div class="form-group">
     <%= f.label :description %><br>
     <%= f.text_area :description, rows: 3, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :url %><br>
+    <%= f.text_area :url, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :if_finish %><br>
+    <%= f.check_box :if_finish %>
   </div>
   <div class="form-group">
     <%= f.submit class: 'btn btn-primary' %>

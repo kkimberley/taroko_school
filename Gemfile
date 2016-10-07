@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Beauty with Bootstrap
 gem 'bootstrap', '~> 4.0.0.alpha4'
+gem 'bootstrap-glyphicons'
 # Use Devise for User authentication
 gem 'devise'
 
