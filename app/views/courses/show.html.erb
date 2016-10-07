@@ -1,0 +1,35 @@
+<% breadcrumb :course , @path,@course %>
+<p>
+  <h1><%= @course.title %></h1>
+</p>
+
+<p>
+  <strong><%= @course.description %></strong>
+</p>
+
+<h2>Courses list <%= link_to 'Add Mission', new_path_course_mission_path(@path, @course), class: 'btn btn-primary' %></h2>
+
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>List</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @missions.each do |mission| %>
+      <tr>
+        <td>
+          <%= link_to mission.title, path_course_mission_path(@path, @course, mission) %>
+          <%= link_to 'Modify', edit_path_course_mission_path(@path, @course, mission), class: 'btn btn-outline-warning btn-sm' %>
+          <%= link_to 'Delete', path_course_mission_path(@path, @course, mission), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-secondary btn-sm' %>
+          <% if mission.if_finish %>
+            <span class="glyphicon glyphicon-check"></span>
+          <% end %>
+        </td>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back', path_path(@path), class: 'btn btn-info btn-lg' %>
