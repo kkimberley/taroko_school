@@ -14,7 +14,9 @@ class MissionsController < ApplicationController
 
   def update
     if @mission.update(mission_params)
-      redirect_to path_course_path(@path, @course)
+      respond_to do |format|
+        format.js { }
+      end
     else
       render 'edit'
     end

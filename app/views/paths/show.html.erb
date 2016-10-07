@@ -7,10 +7,13 @@
   </p>
 </div>
 
-<table class="table">
+<table class="table table-hover">
   <thead class="thead-inverse">
     <tr>
-      <th>Courses list</th>
+      <th>Courses</th>
+      <th> Modify </th>
+      <th> Delete </th>
+      <th> Finish </th>
     </tr>
   </thead>
   <tbody>
@@ -18,8 +21,14 @@
       <tr>
         <td>
           <%= link_to course.title, path_course_path(@path, course) %>
+        </td>
+        <td>
           <%= link_to 'Modify', edit_path_course_path(@path, course), class: 'btn btn-outline-warning btn-sm' %>
+        </td>
+        <td>
           <%= link_to 'Delete', path_course_path(@path, course), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-secondary btn-sm' %>
+        </td>
+        <td>
           <% if if_finish_all_missions?(course) %>
             <span class="glyphicon glyphicon-check"></span>
           <% end %>
