@@ -14,9 +14,7 @@ class MissionsController < ApplicationController
 
   def update
     if @mission.update(mission_params)
-      respond_to do |format|
-        format.js { }
-      end
+      head :no_content
     else
       render 'edit'
     end
