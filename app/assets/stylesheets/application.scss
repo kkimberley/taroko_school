@@ -13,3 +13,19 @@
  */
  @import "bootstrap";
  @import 'bootstrap/glyphicons';
+
+.super_lg {
+  width: 300px;
+  height: 300px;
+  margin-left: 80px;
+  line-height: 300px;
+}
+
+.super_lg span {
+  font-size: 200px;
+}
+
+.index_div {
+  margin: auto;
+  margin-top: 20%;
+}
