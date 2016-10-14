@@ -1,0 +1,17 @@
+<%= form_for @post do |f| %>
+  <div class="form-group">
+    <%= f.label :title %><br>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, rows: 3, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :url %><br>
+    <%= f.text_area :url, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>
