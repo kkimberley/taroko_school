@@ -5,7 +5,25 @@
   <p class="list-group-item list-group-item-action">
     <%= @post.description %>
   </p>
-  <%= link_to @post.url, url_with_protocol(@post.url), target: '_blank', class: 'list-group-item list-group-item-action' %>
+  <table class="list-group-item list-group-item-action post_tbl">
+    <tr>
+      <td colspan="2"><%= link_to @post.url, url_with_protocol(@post.url), target: '_blank' %></td>
+    </tr>
+    <tr>
+      <td>
+        <%= image_tag @url_favicon unless @url_favicon.blank? %><%= @url_title %>
+      </td>
+      <td rowspan="3">
+        <%= image_tag @url_img, class: "post_img" unless @url_img.blank? %>
+      </td>
+    </tr>
+    <tr>
+      <td><%= link_to @url_subtitle, @url_url, target: '_blank' %></td>
+    </tr>
+    <tr>
+      <td><%= @url_description %></td>
+    </tr>
+  </table>
   <p class="list-group-item list-group-item-action">
     <%= link_to 'Back', posts_path, class: 'btn btn-info btn-lg' %>
   </p>
