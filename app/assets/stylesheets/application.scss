@@ -29,3 +29,37 @@
   margin: auto;
   margin-top: 20%;
 }
+
+.jumbotron_path {
+  color: white;
+  background-color: #333;
+}
+
+.jumbotron_path hr {
+  border-color: white;
+}
+
+.card_path_group {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.card_path {
+  margin-top: 30px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card_path .card-header {
+  background-color: #21abc7;
+}
+
+.card-title a {
+  color: black;
+}
+
+.card_course {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 30px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
