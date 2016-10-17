@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :find_post, except: [:index, :new, :create]
 
   def index
-    @posts = Post.all
+    @posts = sort(Post.all)
   end
 
   def show
@@ -36,6 +36,16 @@ class PostsController < ApplicationController
     redirect_to action: :index
   end
 
+  def uplike
+    @post.likes.create
+    redirect_to(posts_path)
+  end
+
+  def downlike
+    @post.likes.last.destroy
+    redirect_to(posts_path)
+  end
+
   private
 
   def post_params
@@ -44,5 +54,9 @@ class PostsController < ApplicationController
 
   def find_post
     @post = Post.find(params[:id])
+  end
+
+  def sort(posts)
+    posts.sort_by{ |post| post.likes.count }.reverse
   end
 end
