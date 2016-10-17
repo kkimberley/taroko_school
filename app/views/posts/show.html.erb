@@ -11,17 +11,17 @@
     </tr>
     <tr>
       <td>
-        <%= image_tag @url_favicon unless @url_favicon.blank? %><%= @url_title %>
+        <%= image_tag url.favicon unless url.favicon.blank? %><%= url.title %>
       </td>
       <td rowspan="3">
-        <%= image_tag @url_img, class: "post_img" unless @url_img.blank? %>
+        <%= image_tag url.img, class: "post_img" unless url.img.blank? %>
       </td>
     </tr>
     <tr>
-      <td><%= link_to @url_subtitle, @url_url, target: '_blank' %></td>
+      <td><%= link_to url.subtitle, url.url, target: '_blank' %></td>
     </tr>
     <tr>
-      <td><%= @url_description %></td>
+      <td><%= url.description %></td>
     </tr>
   </table>
   <p class="list-group-item list-group-item-action">

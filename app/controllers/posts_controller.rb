@@ -7,15 +7,11 @@ class PostsController < ApplicationController
 
   def show
     page = MetaInspector.new(@post.url)
-    url_split = page.title.split(/: /)[0].split(/- /)
-    markdown = Redcarpet::Markdown.new(MdEmoji::Render, :no_intra_emphasis => true)
+    @url = WebScrape.new(page)
 
-    @url_img = page.images.best
-    @url_favicon = page.images.favicon
-    @url_title = url_split[0]
-    @url_subtitle = url_split[1]
-    @url_description = markdown.render(page.description).html_safe
-    @url_url = page.url
+    render locals: {
+      url:  @url
+    }
   end
 
   def new
