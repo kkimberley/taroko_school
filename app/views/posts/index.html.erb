@@ -13,6 +13,7 @@
       <th>Posts</th>
       <th> Modify </th>
       <th> Delete </th>
+      <th> Course </th>
     </tr>
   </thead>
   <tbody>
@@ -27,6 +28,13 @@
         <td>
           <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-secondary btn-sm' %>
         </td>
+        <td>
+          <%= form_for post, method: :patch, remote: true do |f| %>
+            <div class="form-group">
+              <%= f.collection_select(:course_id, Course.all, :id, :title, {include_blank: "Please select", selected: 0}, html_options = { onchange: "$(this.form).submit()" }) %>
+            </div>
+          <% end %>
+        <td>
       </tr>
     <% end %>
   </tbody>

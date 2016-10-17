@@ -11,9 +11,6 @@
   <div class="card card-block card_course">
     <h3 class="card-title">
       <%= link_to course.title, path_course_path(@path, course) %>
-      <% if if_finish_all_missions?(course) %>
-        <span class="glyphicon glyphicon-check"></span>
-      <% end %>
     </h3>
     <p class="card-text"><%= course.description %></p>
     <%= link_to 'Modify', edit_path_course_path(@path, course), class: 'btn btn-primary' %>
