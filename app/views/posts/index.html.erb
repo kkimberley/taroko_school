@@ -13,6 +13,7 @@
       <th>Posts</th>
       <th> Modify </th>
       <th> Delete </th>
+      <th> Like </th>
     </tr>
   </thead>
   <tbody>
@@ -26,6 +27,12 @@
         </td>
         <td>
           <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-secondary btn-sm' %>
+        </td>
+        <td>
+          <%= link_to uplike_post_path(post), class: 'btn btn-outline-primary btn-sm', method: :post do %>
+            <%= pluralize(post.likes.count, "Like") %>
+          <% end %>
+          <%= link_to '-', downlike_post_path(post), class: 'btn btn-outline-warning btn-sm', method: :post %>
         </td>
       </tr>
     <% end %>
