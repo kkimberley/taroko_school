@@ -2,7 +2,7 @@ class CoursesController < ApplicationController
   before_action :find_course, except: [:new, :create]
 
   def show
-    @posts = Post.all.where(course_id: @course.id)
+    @posts = @course.posts
   end
 
   def new
