@@ -1,6 +1,8 @@
 <nav class="navbar navbar-light bg-faded">
   <% if user_signed_in? %>
     <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-success pull-xs-right' %>
+    <%= link_to 'Path', paths_path, class: 'btn btn-outline-warning pull-xs-right' %>
+    <%= link_to 'Post', posts_path, class: 'btn btn-outline-info pull-xs-right' %>
   <% else %>
     <%= link_to 'Sign in', new_user_session_path, class: 'btn btn-outline-success pull-xs-right' %>
   <% end %>

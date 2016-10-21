@@ -2,9 +2,6 @@
   <h1 class="display-3"><%= @course.title %></h1>
   <p class="lead"><strong><%= @course.description %></strong></p>
   <hr class="m-y-2">
-  <p class="lead">
-    <%= link_to 'Add Mission', new_path_course_mission_path(@path, @course), class: 'btn btn-primary' %>
-  </p>
 </div>
 
 <table class="table table-hover">
@@ -13,27 +10,19 @@
       <th> Missions </th>
       <th> Modify </th>
       <th> Delete </th>
-      <th> Finish </th>
     </tr>
   </thead>
   <tbody>
-    <% @missions.each do |mission| %>
+    <% @posts.each do |post| %>
       <tr>
         <td>
-          <%= link_to mission.title, path_course_mission_path(@path, @course, mission) %>
+          <%= link_to post.title, post_path(post) %>
         </td>
         <td>
-          <%= link_to 'Modify', edit_path_course_mission_path(@path, @course, mission), class: 'btn btn-outline-warning btn-sm' %>
+          <%= link_to 'Modify', edit_post_path(post), class: 'btn btn-outline-warning btn-sm' %>
         </td>
         <td>
-          <%= link_to 'Delete', path_course_mission_path(@path, @course, mission), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-secondary btn-sm' %>
-        </td>
-        <td>
-          <%= form_for([@path, @course, mission], remote: true ) do |f| %>
-            <div class="form-group">
-              <%= f.check_box :if_finish, onclick: "$(this.form).submit()" %>
-            </div>
-          <% end %>
+          <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-secondary btn-sm' %>
         </td>
         </td>
       </tr>
