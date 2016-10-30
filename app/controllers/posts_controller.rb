@@ -6,6 +6,12 @@ class PostsController < ApplicationController
   end
 
   def show
+    page = MetaInspector.new(@post.url)
+    @knowledge = WebScrape.new(page)
+
+    render locals: {
+      knowledge:  @knowledge
+    }
   end
 
   def new

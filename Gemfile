@@ -35,6 +35,10 @@ gem 'bootstrap', '~> 4.0.0.alpha4'
 gem 'bootstrap-glyphicons'
 # Use Devise for User authentication
 gem 'devise'
+# Plenty url
+gem 'metainspector'
+gem 'redcarpet'
+gem 'md_emoji'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
